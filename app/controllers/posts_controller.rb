@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  def index 
+  def index
     @posts = Post.all.order(id: "DESC")
   end
 
@@ -9,8 +9,8 @@ class PostsController < ApplicationController
   end
 
   def checked
-    post = Post.find(parans[:id])
-    if post.checked#このcheckedはカラム名
+    post = Post.find(params[:id])
+    if post.checked then 
       post.update(checked: false)
     else
       post.update(checked: true)
