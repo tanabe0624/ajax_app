@@ -10,10 +10,10 @@ class PostsController < ApplicationController
 
   def checked
     post = Post.find(parans[:id])
-    if post.checked
+    if post.checked#このcheckedはカラム名
       post.update(checked: false)
     else
-      post.update(check: true)
+      post.update(checked: true)
     end
 
     item = Post.find(params[:id])
